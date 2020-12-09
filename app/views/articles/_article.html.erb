@@ -1,0 +1,9 @@
+<div class="divTableCell" class="tableCell"><%= article.title %></div>
+        <div class="divTableCell"><%= article.text %></div>
+        <div class="divTableCell">
+          <%= link_to 'Show', article_path(article) %>
+          <%= link_to 'Edit', edit_article_path(article), remote: true %>
+          <%= link_to 'Destroy', article_path(article),
+                          method: :delete,
+                          data: { confirm: 'Are you sure?', remote: true }, class: "delete" %>
+        </div>

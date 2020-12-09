@@ -1,0 +1,91 @@
+ <!-- only if you need custom infoboxes -->
+<h3 align="center" class="mt-5"> <kbd class="bg-info">Articles</kbd></h3>
+  <%#= link_to 'New article', new_article_path %>
+<%#= link_to 'New article', new_article_path, {remote: true, 'data-toggle' =>  "modal", 
+                'data-target' => '#modal-window', class: 'btn btn-info btn-sm'}  %>
+
+
+<div id="modal-window" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog  modal-sm" role="document">
+    <div class="modal-content"></div>
+  </div>
+</div>
+<br>
+<!-- <input id="myInput" type="text" placeholder="Search.."> -->
+<div align="center">
+  <%= form_tag articles_path, :method => 'get' do %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "search" %>
+  <% end %>
+</div>
+<br>
+
+<div class="table-responsive text-nowrap">
+  <div class="divTable blueTable center table-success">
+    <div class="divTableHeading">
+      <div class="divTableRow table-dark" align="center" class="table-dark">
+        <div class="divTableHead">Title</div>
+        <div class="divTableHead">Text</div>
+        <div class="divTableHead">Action</div>
+      </div>
+    </div>
+    <div class="divTableBody" align="center">
+      <!-- <div class="divTableRow">
+        <div class="divTableCell">cell1_1</div>
+        <div class="divTableCell">cell2_1</div>
+      </div> -->
+
+      <% @articles.each do |article| %>
+        <%= content_tag :div, class: "divTableRow", id: dom_id(article) do %>
+          <%= render article %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+ 
+
+
+
+<!-- <div style='width: 800px;'>  
+  <div id="map" style='width: 800px; height: 400px;'></div>  
+</div>  --> 
+
+<!-- <script type="text/javascript">  
+
+</script> -->
+
+
+
+ <!--  <div class="container mt-3">
+    <h2>Activate Modal with JavaScript</h2>
+    <button type="button" class="btn btn-primary" id="myBtn">Open Modal</button>
+
+   
+    <div class="modal fade" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          
+          <div class="modal-header"> data: {toggle: "modal", target: "#modal"
+            <h4 class="modal-title">Modal Heading</h4>
+            <button type="button" class="close" data-dismiss="modal">×</button>
+          </div>
+
+          
+          <div class="modal-body"> data: {toggle: "modal", target: "#modal"
+            Modal body..
+          </div>
+
+          
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+ -->

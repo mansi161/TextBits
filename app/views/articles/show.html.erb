@@ -1,0 +1,19 @@
+<p>
+  <strong>Title:</strong>
+  <%#= @article.title %>
+  <%= best_in_place @article, :title, :as => :input %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @article.text %>
+</p>
+<%#= link_to 'Edit', edit_article_path(@article), {:remote => true, 'data-toggle' =>  "modal", 
+                'data-target' => '#modal-window'} %>
+
+<!-- <div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+   	 <div class="modal-content"></div>
+  </div> -->
+</div>
+<%= link_to 'Back', articles_path %>

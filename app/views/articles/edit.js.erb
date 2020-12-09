@@ -1,0 +1,7 @@
+// $("#modal-window").find(".modal-content").html("<%= j (render 'edit') %>");
+// $("#modal-window").modal();
+
+document.getElementById('<%= dom_id(@article) %>').insertAdjacentHTML('afterend', 
+							"<%= j render 'inline_form', article: @article %>")
+
+document.getElementById('<%= dom_id(@article) %>').style.display = 'none'

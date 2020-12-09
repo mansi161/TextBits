@@ -1,0 +1,17 @@
+<%= form_with model: article, class: "divTableRow", id: dom_id(article, 'inline_form') do |form| %>
+	
+	<div class="divTableCell">
+	  <%#= form.label :title %>
+	  <%= form.text_field :title %>
+	</div>
+	 
+	<div class="divTableCell">
+	  <%#= form.label :text %>
+	  <%= form.rich_text_area :text %>
+	  <%#= form.text_field :text %>
+	</div>
+	 
+	<div class="divTableCell">
+	  <%= form.submit class: "btn-sm btn-success" %>
+	</div>
+<% end %>
